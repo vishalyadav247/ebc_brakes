@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <button id="saveProductsBtn">Save Products</button>
+    <button id="deleteAllProductsBtn">Delete All Products</button>
+  <!-- Script to handle button click -->
+    <script>
+        document.getElementById('deleteAllProductsBtn').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/delete-all-products', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                alert(data.message); // Display success message
+            } catch (error) {
+                console.error('Error deleting products:', error);
+                alert('Failed to delete products.'); // Display error message
+            }
+        });
+        document.getElementById('saveProductsBtn').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/save-products', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                alert(data.message); // Display success message
+            } catch (error) {
+                console.error('Error saving products:', error);
+                alert('Failed to save products.'); // Display error message
+            }
+        });
+    </script>
+</body>
+</html>

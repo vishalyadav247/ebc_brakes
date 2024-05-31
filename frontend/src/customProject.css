@@ -1,0 +1,58 @@
+.nav-item:has(.setting-profile-item) {
+    position: fixed;
+    bottom: 0;
+    padding-top:10px;
+  }
+  .box-border{
+    border:1px solid #ddd;
+    width:350px;
+  }
+  .custom-file-upload {
+    border: 1px solid #343a40;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #343a40;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500!important;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #23272b;
+    color: #fff;
+  }
+  .file-input {
+    display: none; /* Hide the default file input */
+  }  
+  .content-header h1{
+    display: none;
+  }
+  .content-header{
+    /* border-bottom: 1px solid #ddd; */
+    margin-bottom: 20px;
+    padding: 0!important;
+  }
+  .content-wrapper{
+    background-color: #fff!important;
+  }
+  .content-header{
+    margin-left:1rem!important;
+    margin-right:1rem!important;
+  }
+  .fa.fa-arrow-left{
+    color: #000000;
+    border: 1px solid;
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+  }
+  .page-link:focus{
+    box-shadow:none!important;
+  }
+  .col-form-label{
+    font-size:20px!important;;
+  }
+  .table{
+    overflow:auto;
+  }

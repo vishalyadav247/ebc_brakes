@@ -1,0 +1,77 @@
+<style>
+  .formWrapper {
+    background-image: url(https://www.ebcbrakeshop.co.uk/sites/EBC-Brakes/ebc-summer-banner-2024.jpg);
+    height: 360px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+  }
+  .formWrapper form {
+    max-width: 400px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  .formWrapper form {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 30px;
+  }
+  .formWrapper form select {
+    background: #ebebeb;
+    height: 38px;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+  }
+  .formWrapper form input[type='submit'] {
+    padding: 8px 15px;
+    background-color: #007fff;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    width: fit-content;
+  }
+</style>
+<div class="formWrapper">
+  <form id="ebc-product-search" class="custom-ebc-product-search">
+    <select id="make" name="make" class="form-select">
+      <option value="">Select Make</option>
+    </select>
+    <select id="model" name="model">
+      <option value="">Select Model</option>
+    </select>
+    <select id="start_year" name="start_year">
+      <option value="">Select Year</option>
+    </select>
+    <select id="engine_type" name="engine_type">
+      <option value="">Select Engine Type</option>
+    </select>
+    <input type="submit" value="Show Me My Brakes">
+  </form>
+</div>
+
+{% schema %}
+{
+  "name": "filterWidget",
+  "settings": [],
+  "presets": [
+    {
+      "name": "filterWidget"
+    }
+  ]
+}
+{% endschema %}

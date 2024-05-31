@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CSV</title>
+</head>
+<body>
+    <h1>Upload CSV File</h1>
+    <form action="/uploadCsv" method="post" enctype="multipart/form-data">
+        <input type="file" name="csvFile" accept=".csv" required>
+        <button type="submit">Upload CSV</button>
+    </form>
+    <button id="deleteAllCsvProducts">Delete All Csv Products</button>
+
+      <script>
+        document.getElementById('deleteAllCsvProducts').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/delete-csv-products', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                alert(data.message); // Display success message
+            } catch (error) {
+                console.error('Error deleting products:', error);
+                alert('Failed to delete products.'); // Display error message
+            }
+        });
+       
+    </script>
+</body>
+</html>

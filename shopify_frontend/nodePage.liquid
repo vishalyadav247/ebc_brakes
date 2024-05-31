@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search</title>
+    <style>
+      .what-include-box {
+        padding-left: 115px;
+      }
+      .what-include-box > p {
+        display: none;
+      }
+      .what-include-box:has(#included-product > li) > p {
+        display: block;
+      }
+      .custom-ebc-product-search {
+        text-align: center;
+        padding-top: 15px;
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        max-width: 1150px;
+        margin: auto;
+      }
+
+      .custom-ebc-product-search select:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      .custom-ebc-product-search select {
+        padding: 12px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #808080;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+      }
+
+      .custom-ebc-product-search select option {
+        font-size: 15px;
+      }
+
+      .custom-product-info {
+        max-width: 1150px;
+        margin: auto;
+        padding-bottom: 15px;
+      }
+
+      .product-div-inner {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      .product-sku-row,
+      .ebc-box-two {
+        background: #ddd;
+        align-items: center;
+      }
+
+      .product-sku-row,
+      .product-sku-img-row,
+      .ebc-box-two {
+        display: flex;
+        padding: 15px;
+        gap: 30px;
+        /* align-items:center; */
+      }
+
+      .product-sku-img-column {
+        width: 30%;
+        text-align: center;
+      }
+
+      .product-sku-img-column > img {
+        max-width: 60%;
+      }
+
+      .custom-product-info p {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .product-price-css {
+        color: #000000;
+        font-size: 30px !important;
+        font-weight: 600;
+        padding-bottom: 0px;
+      }
+
+      .product-sku-content-column p {
+        /* padding-bottom:15px; */
+      }
+
+      .add-to-cart-btn > a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .add-to-cart-btn {
+        padding: 15px 60px;
+        font-size: 18px;
+        background: #808080;
+        border: 1px solid #808080;
+        border-radius: 5px;
+      }
+
+      .product-title-css,
+      .product-sku-css {
+        color: #000000;
+        font-weight: 600;
+        font-size: 22px;
+      }
+
+      .add-to-card-btn-box {
+        padding-right: 15px;
+        width: max-content;
+        margin-left: auto;
+        padding-bottom: 15px;
+      }
+
+      .included-titles {
+        padding-left: 15px;
+        margin-top: 0;
+      }
+
+      .included-titles strong {
+        font-weight: normal;
+      }
+
+      .car-img {
+        margin: 30px 0;
+      }
+
+      .what-included {
+        margin: 15px;
+        margin-top: 0px;
+      }
+
+      .ebc-box-two-img {
+        border: 1px solid #ddd;
+        max-width: 200px;
+        margin: 15px;
+        border-radius: 5px;
+      }
+
+      ul {
+        padding-left: 15px;
+        margin-top: 0;
+      }
+
+      .ebc-box-two-main {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      #sku {
+        display: none;
+      }
+
+      .what-include-box:has(ul:empty) {
+        display: none;
+      }
+
+
+      .filterWrapper{
+        display: grid;
+        max-width: 1000px;
+        margin: auto;
+        grid-template-columns: 150px auto;
+        gap:20px;
+      }
+      .filterWrapper {
+        display: grid;
+        max-width: 1000px;
+        margin: auto;
+        grid-template-columns: 180px auto;
+        margin-top:20px;
+      }
+      .customFilter{
+        padding: 10px 15px;
+        background: linear-gradient(290deg, rgba(30, 82, 169, 1) 0%, rgba(0, 127, 255, 1) 100%);
+        border-radius: 10px;
+        color: #fff;
+        font-weight: 600;
+        height:max-content;
+      }
+      .productTagList{
+        padding-left:0;
+        margin-bottom:0;
+      }
+      .customFilter li{
+            background-color: #007fff;
+            list-style-type:none;
+            margin-bottom:10px;
+            cursor:pointer;
+        padding-left:7px;
+        border-radius:5px;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <form id="ebc-product-search" class="custom-ebc-product-search">
+      <select id="make" name="make" class="form-select">
+        <option value="">Select Make</option>
+      </select>
+      <select id="model" name="model">
+        <option value="">Select Model</option>
+      </select>
+      <select id="start_year" name="start_year">
+        <option value="">Select Year</option>
+      </select>
+      <select id="engine_type" name="engine_type">
+        <option value="">Select Engine Type</option>
+      </select>
+    </form>
+    <div class='filterWrapper'>
+      <div class='customFilter'>
+        <p>Brake Parts</p>
+        <ul class='productTagList'>
+          <li><input type='checkbox' value='ebc'>ebc</li>
+        </ul>
+        <p>Car End</p>
+        <ul class='productTagList'>
+          <li><input type='checkbox' value='rear'>rear</li>
+          <li><input type='checkbox' value='back'>back</li>
+        </ul>
+        <p>Pad Componand</p>
+        <ul class='productTagList'>
+          <li><input type='checkbox' value='pad'>pad</li>
+          <li><input type='checkbox' value='ultimax'>ultimax</li>
+        </ul>
+      </div>
+      <div id="product-info" class="custom-product-info"></div>
+    </div>
+
+   
+  </body>
+</html>
